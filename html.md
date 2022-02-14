@@ -1,7 +1,7 @@
 <!--
  * @Author: lqm283
  * @Date: 2022-02-12 11:39:45
- * @LastEditTime: 2022-02-14 11:09:12
+ * @LastEditTime: 2022-02-14 11:53:41
  * @LastEditors: lqm283
  * --------------------------------------------------------------------------------------------------------------------<
  * @Description: Please edit a descrition about this file at here.
@@ -492,5 +492,18 @@ type属性的属性值及其表述如下：
 核心：\<label>标签的for属性应该与相关元素的id属性相同。
 
 ### select下拉表单元素
+
+使用场景：在页面中，如果有多个选项让用户选择，并且想要节约页面空间时，我们可以使用\<select>标签控件定义下拉列表。
+
+语法：
+
+```html
+\<select>
+    \<option>选项1\</option>
+    \<option>选项2\</option>
+    \<option>选项3\</option>
+    ...
+\</select>
+```
 
 ### textarea文本域元素
