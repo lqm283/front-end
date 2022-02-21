@@ -1,0 +1,44 @@
+<!--
+ * @Author: lqm283
+ * @Date: 2022-02-21 13:48:44
+ * @LastEditTime: 2022-02-21 13:53:41
+ * @LastEditors: lqm283
+ * --------------------------------------------------------------------------------------------------------------------<
+ * @Description: Please edit a descrition about this file at here.
+ * --------------------------------------------------------------------------------------------------------------------<
+ * @FilePath: \front-end\HTML\BlackHorse\day4\06-链接伪类选择器.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>链接伪类选择器</title>
+    <style>
+      /* 未访问过的链接 */
+      a:link {
+        color: #333;
+        text-decoration: none;
+      }
+
+      /* 访问过的链接 */
+      a:visited {
+        color: red;
+      }
+
+      /* 鼠标指针位于其上的链接 */
+      a:hover {
+        color: skyblue;
+      }
+
+      /* 活动的链接(鼠标按下还未弹起时的链接) */
+      a:active {
+        color: forestgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">小猪佩奇</a>
+  </body>
+</html>
