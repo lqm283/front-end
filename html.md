@@ -1,7 +1,7 @@
 <!--
  * @Author: lqm283
  * @Date: 2022-02-12 11:39:45
- * @LastEditTime: 2022-02-14 12:00:17
+ * @LastEditTime: 2022-03-01 15:50:40
  * @LastEditors: lqm283
  * --------------------------------------------------------------------------------------------------------------------<
  * @Description: Please edit a descrition about this file at here.
@@ -513,3 +513,131 @@ type属性的属性值及其表述如下：
 在表单元素中，\<textarea>标签是用于定义多行文本输入的控件。
 
 使用多行文本输入控件，可以输入更多的文字，该控件常见于留言板、评论。
+
+# HTML5 的新特性
+
+HTML5 的新增特性主要时针对以前的不足，增加了一些新的标签、新的表单和新的表单属性等。
+这些新特性都有兼容性问题，基本时 IE9+ 以上版本的浏览器才支持，如果不考虑兼容性问题，可以大量使用这些新特性。
+
+## HTML5 新增的语义化标签
+
+以前布局，我们基本用div来做，div对于搜索引擎来说，是没有语义的。
+
+```html
+\<div class="header"></div>
+\<div class="nav"></div>
+\<div class="content"></div>
+\<div class="footer"></div>
+```
+
+因此，HTML5新增了一些语义化的标签：
+
++ \<header> : 头部标签
++ \<nav> ：导航标签
++ \<artcle> ：内容标签
++ \<section> ：定义文档某个区域
++ \<aside> ：则边栏标签
++ \<footer> ：尾部标签
+
+注意：
+
++ 这种语义化标准主要是针对搜索引擎的
++ 这些新标签页面可以使用多次
++ 在 IE9 中，需要把这些元素转换为块级元素
++ 其实，我们移动端更喜欢使用这些标签
++ HTML5 还增加了很多其他标签
+
+## HTML5 新增的多媒体标签
+
+新增的多媒体标签主要包含两个：
+
+1. 音频： \<audio>
+2. 视频： \<video>
+
+使用它们可以很方便地在页面中嵌入音频和视频，而不再去使用flash和其他浏览器插件
+
+### 视频\<video>
+
+|  浏览器  |  MP4  |    WebM    |    Ogg    |
+| :-----: | :-----: | :-------: | :-------: |
+|Internet Explorer|YES|NO|NO|
+|Chrome|YES|YES|YES|
+|Firefox|YES 从 Firefox 21 版本开始 Linux 从 Firefox 30 版本开始|YES|YES|
+|Safari|YES|NO|NO|
+|Opera|YES 从 Opera 25 版本开始|YES|YES|
+
+语法：
+
+```html
+\<video src="文件地址" controls="controls">\</video>
+```
+
+**常见属性：**
+
+|  属性  |  值  |    描述    |
+| :-----: | :-----: | :-------: |
+|autoplay|autoplay|视频就绪自动播放（谷歌浏览器需要添加muted来解决自动播放问题）|
+|controls|controls|向用户显示播放控件|
+|width|pixels（像素）|设置播放器宽度|
+|height|pixels（像素）|设置播放器高度|
+|loop|loop|循环播放|
+|preload|auto（预先加载视频） none（不先加载视频）|规定是否预加载视频（如果有了autoplay就忽略该属性）|
+|src|url|视频url地址|
+|poster|imgurl|加载等待的画面图片|
+|muted|muted|静音播放|
+
+### 音频
+
+|  浏览器  |  MP3  |    Wav    |    Ogg    |
+| :-----: | :-----: | :-------: | :-------: |
+|Internet Explorer|YES|NO|NO|
+|Chrome|YES|YES|YES|
+|Firefox|YES|YES|YES|
+|Safari|YES|YES|NO|
+|Opera|YES|YES|YES|
+
+语法：
+
+```html
+\<audio src="文件地址" controls = "controls">\</audio>
+```
+
+|  属性  |  值  |    描述    |
+| :-----: | :-----: | :-------: |
+|autoplay|autoplay|视频就绪自动播放（谷歌浏览器需要添加muted来解决自动播放问题）|
+|controls|controls|向用户显示播放控件,比如播放按钮|
+|loop|loop|循环播放|
+|src|url|视频url地址|
+
+### 多媒体标签总结
+
++ 音频标签和视频标签使用方式基本一致
++ 浏览器支持情况不同
++ 谷歌浏览器把音频和视频自动播放功能禁止了
++ 我们可以给视频标签添加nuted属性来静音播放视频，音频不可以（可以通过JavaScript解决）
++ 视频标签是重点，我们经常设置自动播放，不使用controls控件，循环和设置大小属性
+
+## HTML5 新增的 input 类型
+
+|  属性值  |  说明  |
+| :-----: | :-----: |
+|type="email"|限制用户输入必须为 Email 类型|
+|type="url"|限制用户输入必须为 URL 类型|
+|type="date"|限制用户输入必须为日期类型|
+|type="time"|限制用户输入必须为时间类型|
+|type="month"|限制用户输入必须为月类型|
+|type="week"|限制用户输入必须为周类型|
+|type="number"|限制用户输入必须为数字类型|
+|type="tel"|电话号码|
+|type="search"|搜索框|
+|type="color"|生成一个表单|
+
+## HTML5 新增的表单属性
+
+|  属性  |  值  |    说明    |
+| :-----: | :-----: | :-------: |
+|required|required|表单用于该属性表示内容不能为空，必填|
+|placeholder|提示文本|表单的提示信息，存在默认值将不显示|
+|autofocus|autofocus|自动聚焦属性，页面加载完成西东聚焦到指定表单|
+|autocomplete|off/on|当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。默认已经打开，如 autocomplete="on",关闭 autocomplete = "off" 需要放在表单内，同时加上 name 属性，同时成功提交|
+|multiple|multiple|可以多选文件提交|
